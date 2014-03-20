@@ -1,0 +1,71 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8" /> 
+    <title>SergeLand Image Zoomer v3.0</title>
+<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
+<script src="../zoomsl-3.0.min.js"></script>
+</head>
+<body>
+						
+<script>
+jQuery(function(){
+
+    // если отсутсвует zoomsl-3.0.min.js
+	if(!$.fn.imagezoomsl){
+	
+		$('.msg').show();
+		return;
+	}
+     else $('.msg').hide();
+
+	 
+	// инициализация плагина
+	$('.my-foto').imagezoomsl({ 
+
+		  innerzoommagnifier: true,
+		  classmagnifier: window.external ? "round-loope" : "", // fix для Opera и Safary
+		  magnifierborder: "5px solid #F0F0F0",                 // fix для Opera и Safary		  
+		  zoomrange: [2, 8],
+		  zoomstart: 4,
+		  magnifiersize: [150, 150]	
+	});  
+});
+</script>
+
+<!-- круглая лупа в Chrome и Firefox -->
+<style>
+.round-loope{
+   border-radius: 75px;
+   border: 5px solid #F0F0F0;
+}
+</style>
+
+<br><br>
+
+<table border="0">
+<tr><td colspan="3" align="center"></td></tr>
+<tr>
+	<td width="40%">&nbsp;</td><td>
+
+		<img class="my-foto" src="images/image-small.jpg" data-large="images/image-big.jpg" title="Фото">
+
+	</td><td width="40%">&nbsp;</td>
+</tr></table>	 
+
+<script type="text/javascript">
+
+  var _gaq = _gaq || [];
+  _gaq.push(['_setAccount', 'UA-36251023-1']);
+  _gaq.push(['_setDomainName', 'jqueryscript.net']);
+  _gaq.push(['_trackPageview']);
+
+  (function() {
+    var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+    ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+    var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+  })();
+
+</script>
+</body>
+</html>

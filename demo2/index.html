@@ -1,0 +1,61 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8" /> 
+    <title>SergeLand Image Zoomer v3.0</title>
+<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
+<script src="../zoomsl-3.0.min.js"></script>	
+</head>
+<body>
+						
+<script>
+jQuery(function(){
+
+    // если отсутсвует zoomsl-3.0.min.js
+	if(!$.fn.imagezoomsl){
+	
+		$('.msg').show();
+		return;
+	}
+     else $('.msg').hide();
+
+	 
+	// инициализация плагина
+	$('.my-foto').imagezoomsl({ 
+
+	   zoomrange: [1, 10],
+	   cursorshadeborder: "10px solid #000",
+	   magnifiereffectanimate: "fadeIn",
+	   magnifierpos: "left"			
+	});  
+});
+</script>
+
+<br><br>
+
+<table border="0">
+<tr><td colspan="3" align="center"></td></tr>
+<tr>
+	<td width="40%">&nbsp;</td><td>
+
+		<img class="my-foto" src="images/image-small.jpg" data-large="images/image-big.jpg" data-title="Red Valentino" data-help="Используйте колесико мыши для Zoom +/-" title="Title">
+
+	</td><td width="40%">&nbsp;</td>
+</tr></table>
+
+<script type="text/javascript">
+
+  var _gaq = _gaq || [];
+  _gaq.push(['_setAccount', 'UA-36251023-1']);
+  _gaq.push(['_setDomainName', 'jqueryscript.net']);
+  _gaq.push(['_trackPageview']);
+
+  (function() {
+    var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+    ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+    var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+  })();
+
+</script>	 
+</body>
+</html>
